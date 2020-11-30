@@ -1,0 +1,17 @@
+-
+ name: Yash
+ hosts: localhost
+ tasks:
+  - community.aws.ec2_instance:
+      name: Test Machine
+      key_name: YOUR_KEY
+      instance_type: t2.micro
+      image: id=<IMAGE_ID>
+      region: ap-south-1
+      wait: yes
+      security_group: <SECURITY_GROUP>
+      vpc_subnet_id: <SUBNET_ID>
+      network:
+        assign_public_ip: true
+      aws_access_key: <ACCESS_KEY>
+      aws_secret_key: <SECRET_KEY>
